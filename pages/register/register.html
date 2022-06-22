@@ -15,10 +15,15 @@
     <!-- sha256 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
     <script defer src="register.js"></script>
+    <!-- <link href="이미지주소.ico" rel="shortcut icon" type="image/x-icon"> -->
   </head>
   <body>
     <div>
       <div>
+        <div>
+          <img src="../../src/logo" alt="">
+          <p>FOODING</p>
+        </div>
         <div>
           <!-- 휴대폰번호 이름 -->
           <label for="new_email">이메일</label><br>
@@ -27,10 +32,10 @@
           <input type="password" id="new_pw_1" name="new_pw_1"><br>
           <label for="new_pw_2">비밀번호 확인</label><br>
           <input type="password" id="new_pw_2" name="new_pw_2"><br>
+          <label for="name">이름</label><br>
+          <input type="text" id="name" name="name"><br>
           <label for="phone">휴대전화 번호</label><br>
           <input type="text" id="phone" name="phone"></label><br>
-          <label for="name">닉네임</label><br>
-          <input type="text" id="name" name="name"><br>
           <button onclick="newuser();">SUBMIT!</button>
         </div>
       </div>

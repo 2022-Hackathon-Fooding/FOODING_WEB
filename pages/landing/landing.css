@@ -1,5 +1,5 @@
 body {
-  background-image: url('../../src/landing_background.jpg');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/landing_background.jpg?alt=media&token=6a922e8d-3cf3-4599-b393-0e83e1a02a1e');
 }
 .outer {
   display: flex;

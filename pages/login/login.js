@@ -46,6 +46,7 @@ function login() {
     .then((userCredential) => {
       const user = userCredential.user;
       current_name = user.name;
+      location.href = '../main/main.html';
     })
     .catch(function (error) {
       // Handle Errors here.
@@ -98,24 +99,4 @@ function newuser() {
           });
       });
   }
-}
-
-function upload() {
-  input_subject = document.getElementById('input_subject').value;
-  input_contents = document.getElementById('inpt_contents');
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      const db = firebase.firestore();
-      db.collection('notice')
-        .doc(subject)
-        .set({
-          name: user.name,
-          subject: input_subject,
-          contents: input_contents,
-        })
-        .then(function () {
-          alert('등록되었습니다.');
-        });
-    }
-  });
 }

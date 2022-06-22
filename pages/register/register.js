@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 //로그아웃
 function logout() {
   firebase.auth().signOut();
+  // location.href = "../login/login.html"
 }
 logout();
 firebase.auth().onAuthStateChanged(function (user) {
@@ -91,7 +92,7 @@ function newuser() {
           .then(function () {
             console.log('firestore()DB 유저 추가성공');
             alert('회원가입이 완료되었습니다.');
-            location.href = './';
+            location.href = '../login/login.html';
           })
           .catch(() => {
             console.error('firestore()DB추가 실패', error);

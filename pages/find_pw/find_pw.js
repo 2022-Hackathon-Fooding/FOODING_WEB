@@ -1,12 +1,12 @@
 const firebaseConfig = {
-  apiKey: 'AIzaSyC555aONfZjlIMgPKfv2nn-1nIdUw1AEhM',
-  authDomain: 'project-d7cb7.firebaseapp.com',
-  databaseURL: 'https://project-d7cb7-default-rtdb.firebaseio.com',
-  projectId: 'project-d7cb7',
-  storageBucket: 'project-d7cb7.appspot.com',
-  messagingSenderId: '169478102572',
-  appId: '1:169478102572:web:3a01e1a8ce90766e8cbb89',
-  measurementId: 'G-XVH3B0575D',
+  apiKey: 'AIzaSyApROrqspmDS2HluubaoMNjKKfoSN_YtEs',
+  authDomain: 'hekaton-be17b.firebaseapp.com',
+  databaseURL: 'https://hekaton-be17b-default-rtdb.firebaseio.com',
+  projectId: 'hekaton-be17b',
+  storageBucket: 'hekaton-be17b.appspot.com',
+  messagingSenderId: '787027944209',
+  appId: '1:787027944209:web:3952e1046283dd8ef0e2b0',
+  measurementId: 'G-LE7QEDWG64',
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -38,21 +38,21 @@ function findUserPassword() {
       if (doc.data() != null) {
         document.getElementById('content').style.display = 'none';
         var html = `
-                <div class="inner_box">
-                    <div class="name box">
-                        <div id="user_name"></div>
-                        <div class="name_input div1 font-bold text-4xl">비밀번호 : </div>
-                        <br>
-                        <input type="password" class="input text-4xl" id="password1">
-                        <br><br>
-                        <div class="name_input div1 font-bold text-4xl">비밀번호 확인 : </div>
-                        <br>
-                        <input type="password" class="input text-4xl" id="password2">
-                    </div>
-                <br>
-                <button class="btn" onclick="changePW(value);" value=${doc.data().id}>비밀번호 변경</button>
-            </div>
-                `;
+                  <div class="inner_box">
+                      <div class="name box">
+                          <div id="user_name"></div>
+                          <div class="name_input div1 font-bold text-4xl">비밀번호 : </div>
+                          <br>
+                          <input type="password" class="input text-4xl" id="password1">
+                          <br><br>
+                          <div class="name_input div1 font-bold text-4xl">비밀번호 확인 : </div>
+                          <br>
+                          <input type="password" class="input text-4xl" id="password2">
+                      </div>
+                  <br>
+                  <button class="btn" onclick="changePW(value);" value=${doc.data().id}>비밀번호 변경</button>
+              </div>
+                  `;
         document.getElementById('content1').innerHTML = html;
       } else {
         console.log('gdgd');
