@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOODING</title>
+    <!-- css -->
+    <link rel="stylesheet" href="login.css" />
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <!-- sha256 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script defer src="login.js"></script>
+  </head>
+  <style>
+    .logo {
+      position: absolute;
+      left: 900px;
+      top: 150px;
+      z-index: 999;
+    }
+  </style>
+  <body>
+    <div id="header">
+      <div class="header_wrap my-8">
+        <h1>
+          <div class="my-8"></div>
+          <a href="./"
+            ><p class="logo"><img src="img/logo2.png" width="180px" alt="" /></p
+          ></a>
+        </h1>
+        <nav class="float-right">
+          <h2 class="hidden"></h2>
+          <ul class="gnb"></ul>
+        </nav>
+      </div>
+      <div class="inner">
+        <div class="inner_box">
+          <div id="login_div" class="main-div">
+            <br />
+            <div class="id flex items-baseline">
+              <div class="id_context text-3xl font-bold">아이디 : &nbsp; &nbsp; &nbsp; &nbsp;</div>
+              <input type="email" class="textr-2xl" placeholder="Email..." id="email_field" />
+            </div>
+            <div class="password flex items-baseline">
+              <div class="password_context text-3xl font-bold">비밀번호 : &nbsp;&nbsp;&nbsp;</div>
+              <input type="password" class="textr-2xl" placeholder="Password..." id="password_field" />
+            </div>
+            <br />
+            <button onclick="login()">Login</button>
+            <br />
+            <a href="../find_id/find_id.html">아이디 찾기&nbsp;</a><span>&nbsp;|&nbsp;</span> <a href="../find_pw/find_pw.html">비밀번호 찾기&nbsp;</a><span>&nbsp;|&nbsp;</span>
+            <a href="../register/register.html">회원 가입</a>
+            <!-- <button onClick="location.href='./signup'">sign up</button> -->
+          </div>
+          <div id="user_div" class="loggedin-div">
+            <h3>Welcome User</h3>
+            <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+            <button onClick="location.href='../main/main.html'">Go to Homepage</button>
+            <br />
+            <button onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

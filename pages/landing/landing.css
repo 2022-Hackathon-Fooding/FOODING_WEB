@@ -1,0 +1,17 @@
+body {
+  background-image: url('../../src/landing_background.jpg');
+}
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.disc_data {
+  text-align: center;
+  background-color: skyblue;
+  align-items: center;
+}
+.BUTTON {
+  cursor: pointer;
+}
