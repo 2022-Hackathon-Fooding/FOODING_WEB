@@ -1,0 +1,7 @@
+ .inner_box {
+  position: relative;
+  background-color: aquamarine;
+  width: 1300px;
+  margin-top: 100px;
+  margin-left: 300px;
+}
