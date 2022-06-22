@@ -21,8 +21,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById('user_div').style.display = 'block';
     document.getElementById('login_div').style.display = 'none';
 
-    var user = firebase.auth().currentUser;
-
     if (user != null) {
       location.href = '../main/main.html';
       var email_id = user.email;
@@ -38,8 +36,7 @@ var current_name;
 //로그인
 function login() {
   var userEmail = document.getElementById('email_field').value;
-  var userPass = sha256(document.getElementById('password_field').value);
-
+  var userPass = document.getElementById('password_field').value;
   firebase
     .auth()
     .signInWithEmailAndPassword(userEmail, userPass)
@@ -55,48 +52,4 @@ function login() {
 
       window.alert('Error : ' + errorMessage);
     });
-}
-
-//회원가입
-function newuser() {
-  email = document.getElementById('new_email').value;
-  new_pw_1 = sha256(document.getElementById('new_pw_1').value);
-  new_pw_2 = sha256(document.getElementById('new_pw_2').value);
-  name = document.getElementById('name').value;
-  phone = document.getElementById('phone').value;
-  if (new_pw_1 != new_pw_2) {
-    alert('확인 비밀번호가 다릅니다.');
-  } else {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, new_pw_1)
-      .then((userCredential) => {
-        const currentUser = {
-          id: userCredential.user.uid,
-          email: email,
-          password: new_pw_1,
-          name: name,
-          phone: phone,
-          emailVerified: userCredential.user.emailVerified,
-        };
-        const db = firebase.firestore();
-        db.collection('users')
-          .doc(currentUser.id)
-          .set({
-            id: currentUser.id,
-            name: currentUser.name,
-            email: currentUser.email,
-            password: currentUser.password,
-            phone: currentUser.phone,
-          })
-          .then(function () {
-            console.log('firestore()DB 유저 추가성공');
-            alert('회원가입이 완료되었습니다.');
-            location.href = './';
-          })
-          .catch(() => {
-            console.error('firestore()DB추가 실패', error);
-          });
-      });
-  }
 }

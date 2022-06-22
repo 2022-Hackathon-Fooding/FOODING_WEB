@@ -26,6 +26,41 @@ function findUserId() {
     });
   });
 }
+
+function resetPassword() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+
+  userId.get().then((snapshot) => {
+    snapshot.forEach(function (doc) {
+      console.log(doc.data());
+      sendPasswordResetForEmail();
+      if (doc.data() != null) {
+        doc.document.getElementById('content').style.display = 'none';
+        var html = `
+                  <div class="inner_box">
+                      <div class="name box">
+                          <div id="user_name"></div>
+                          <div class="name_input div1 font-bold text-4xl">비밀번호 : </div>
+                          <br>
+                          <input type="password" class="input text-4xl" id="password1">
+                          <br><br>
+                          <div class="name_input div1 font-bold text-4xl">비밀번호 확인 : </div>
+                          <br>
+                          <input type="password" class="input text-4xl" id="password2">
+                      </div>
+                  <br>
+                  <button class="btn" onclick="changePW(value);" value=${doc.data().id}>비밀번호 변경</button>
+              </div>
+                  `;
+        document.getElementById('content1').innerHTML = html;
+      } else {
+        console.log('gdgd');
+      }
+    });
+  });
+}
+
 function findUserPassword() {
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
@@ -90,6 +125,10 @@ function changePW(value) {
   const pw1 = sha256(document.getElementById('password1').value);
   const pw2 = sha256(document.getElementById('password2').value);
   // const user_name = document.getElementById("user_name").value;
+
+  const user = firebase.auth().currentUser;
+  console.log(user);
+
   const db = firebase.firestore();
   console.log(value);
   const userId = db
@@ -100,7 +139,7 @@ function changePW(value) {
     })
     .then((snapshot) => {
       alert('비밀번호가 변경했습니다.');
-      location.href = './';
+      location.href = '../login/login';
     });
 }
 

@@ -8,10 +8,14 @@ body {
   min-height: 100vh;
 }
 .disc_data {
+  margin: 100px;
+  padding: 100px;
+  border-radius: 10px;
   text-align: center;
   background-color: skyblue;
   align-items: center;
 }
 .BUTTON {
   cursor: pointer;
+  background-color: aqua;
 }

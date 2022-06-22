@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FOODING</title>
+    <!-- css -->
+    <link rel="stylesheet" href="hind_pw.css" />
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <!-- sha256 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script defer src="find_pw.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div>
+      <div>
+        <div id="content">
+          <p>비밀번호 찾기</p>
+          <label for="name">이름</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="email">이메일</label><br />
+          <input type="text" id="email" name="email" /><br /><br />
+          <button onclick="findUserPassword()">비밀번호 찾기!</button>
+        </div>
+      </div>
+      <div id="content1">
+        <div></div>
+      </div>
+    </div>
+  </body>
 </html>
