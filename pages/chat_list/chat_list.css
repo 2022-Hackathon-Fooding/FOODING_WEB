@@ -1,0 +1,61 @@
+body {
+  background-color: #008B56;
+}
+.chat {
+  position: absolute;
+  overflow:auto;
+  left: 450px;
+  width:1100px;
+  height: 700px;
+  background-color:#fcd345;
+  border-radius: 10px 10px 0 0;
+}
+.input_box {
+  position: absolute;
+  top: 850px;
+  left: 450px;
+  width:1100px;
+  height: 75px;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #fcd345;
+  border-radius: 0 0 10px 10px;
+}
+.send {
+  position: fixed;
+  bottom: 130px;
+  left: 460px;
+}
+#input {
+  width: 880px;
+}
+#btn {
+  position: relative;
+  width: 80px;
+  padding: 8px;
+  background-color: #FC9645;
+  border-radius: 5px;
+}
+.message {
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid #fcd345;
+  border-radius:10px;
+  padding: 10px;
+}
+.div_name {
+  color: #fff;
+}
+.div_time {
+  position: relative;
+  margin-left: 360px;
+  color: #fff;
+}
+.left {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.right {
+  position: relative;
+  margin-left: 59%;
+}
