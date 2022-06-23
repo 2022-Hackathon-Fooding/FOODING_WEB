@@ -1,5 +1,5 @@
 .header_wrap {
-  background-color: aqua;
+  background-color: #008b56;
   display: flex;
   margin: 50px;
   height: 150px;
@@ -23,7 +23,7 @@
 .logo {
   position: relative;
   margin-top: -30px;
-  width: 100px;
+  width: auto;
   height: 100px;
 }
 a {
@@ -42,11 +42,22 @@ a:hover {
 .inner {
   width: 1200px;
 }
-.inner .inner_box {
+.inner_box {
   margin: 0 auto;
   display: absolute;
   float: left;
-  margin: 100px auto;
+  /* margin: 100px auto; */
+  width: 60%;
+  top: 0;
+  right: 0;
+}
+.inner_box > #map {
+  width: 100%;
+  height: 800px;
+}
+.input_list {
+  float: left;
+  width: 40%;
 }
 .gnb > li {
   float: left;
