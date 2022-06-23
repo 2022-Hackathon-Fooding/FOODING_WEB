@@ -36,6 +36,7 @@ body {
   border: 0;
   outline: 0;
   color: #767676;
+  cursor: pointer;
 }
 .text_input {
   width: 400px;

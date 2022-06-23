@@ -4,7 +4,108 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <title>FOODING</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9bfd0f66280f312cd564008236c11783&libraries=services"></script>
+    <link rel="stylesheet" href="../HEAD/header.css" />
+    <link rel="stylesheet" href="project_intro.css" />
+    <script src="project_intro.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="header_wrap">
+      <div class="div_class">
+        <a href="../main/main.html"
+          ><img
+            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_dark_merge.png?alt=media&token=13dfc609-8d33-483e-bc50-49ecc1f9b452"
+            alt=""
+            class="logo"
+            width="300px"
+            height="300px"
+        /></a>
+        <nav class="menu_nav">
+          <!-- <h2 class="hidden"></h2> -->
+          <ul class="gnb">
+            <li><p class="li" onclick="document.location.href='../find_food/find_food.html'">음식점 검색</p></li>
+            <li><p class="li" onclick="document.location.href='../recommend/recommend.html'">추천 목록</p></li>
+            <li><p class="li" onclick="document.location.href='../make_chat/make_chat.html'">채팅방 만들기</p></li>
+            <li><p class="li" onclick="document.location.href='../chat_list/chat_list.html'">채팅방 접속하기</p></li>
+            <li><p class="li" onclick="document.location.href='../project_intro/project_intro.html'">프로젝트 소개</p></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="desc_wraper">
+      <div class="desc_text">
+        <div class="text_wrapper">
+          <div class="inner_text">
+            <p id="intro">프로젝트 소개</p>
+            <p id="desc">
+              배달비와 배달음식 비용이 점점 급증하고 있어 혼자나 소수에서 시켜먹기 부담스러워지고 있습니다. 채팅으로 배달 메이트를 매칭시켜 배달비와 배달음식 비용의 부담을 덜어주는 웹페이지 제작을 하게
+              되었습니다. 거기에 나이대, 현재 기분, 현재 날씨, 시켜먹는 시간대 등을 선택하면 맛을 추천해주는 기능도 있습니다.
+            </p>
+            <p class="intro_form_btn" onclick="intro_form();">팀원 소개</button>
+          </div>
+        </div>
+      </div>
+      <div class="desc_img">
+        <div class="inner_img">
+          <img id="desc_img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/project_intro.png?alt=media&token=c7da536d-80bb-4ee5-a59e-c47f8f3b19c9" alt="대체 이미지!"/>
+        </div>
+      </div>
+    </div>
+    <div class="team_wraper" style="display: none">
+      <div><div class="team_intro_title"><p>팀원 소개</p></div></div>
+        <div class="team_box">
+          <div class="team_upper">
+            <ul class="team_list">
+              <li>
+                <img id="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/JUS_DEV.png?alt=media&token=6ed8ea52-414d-44b6-9375-ac768db13510" alt="정은성님_이미지">
+                <div>
+                  <p id="frag">개발자</p>
+                  <p>정은성<br>
+                  인제대학교</p>
+                </div>
+              </li>
+              <li>
+                <img id="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/KSJ_DEV.png?alt=media&token=0563164d-1326-4476-be1f-34f7c9ae7f3e" alt="김수진님_이미지">
+                <div>
+                  <p id="frag">개발자</p>
+                  <p>김수진<br>
+                  배제대학교</p>
+                </div>
+              </li>
+              <li>
+                <img id="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/LSY_DEV.png?alt=media&token=f6264b57-ee01-432c-9063-66ccbafffa03" alt="이승용님_이미지">
+                <div>
+                  <p id="frag">개발자</p>
+                  <p>이승용<br>
+                  동서대학교</p>
+                </div>
+              </li>
+              <li>
+                <img id="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/SSH_DEV.png?alt=media&token=c6bd4ce7-e5fc-4a62-8b6d-c63cabb9bbb3" alt="심상현님_이미지">
+                <div>
+                  <p id="frag">개발자</p>
+                  <p>심상현<br>
+                  숭실대학교</p>
+                </div>
+              </li>
+              <li>
+                <img id="img_file" class="temp" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/KSU_DS.png?alt=media&token=bf994832-d304-4966-8fab-3e1c9c84b698" alt="김세은님_이미지">
+                <div>
+                  <p id="frag">디자이너</p>
+                  <p>김세은<br>
+                  배제대학교</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
