@@ -2,7 +2,7 @@
 
 ---
 
-## 이미지가 들어갈 자리
+![단체사진](https://user-images.githubusercontent.com/96258104/175428073-5d2d214f-929c-4631-ac37-0192f90bceb3.png)
 
 ---
 
