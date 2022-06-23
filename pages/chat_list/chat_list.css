@@ -1,38 +1,36 @@
-
 @font-face {
   font-family: 'S-CoreDream-5Medium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
-*{
+* {
   font-family: 'S-CoreDream-5Medium';
-  font-weight: 600;
-  color: #396658;
 }
 #find_chat {
   position: relative;
   margin-left: 410px;
   top: 40px;
-  z-index:9;
+  z-index: 9;
 }
 .table {
   padding: 10px;
 }
 .table_head {
-  background-color: #FEF7CC;
+  background-color: #fef7cc;
 }
-th, td {
+th,
+td {
   padding: 10px;
 }
 tr:nth-child(2n) {
   background-color: hsl(54, 100%, 98%);
 }
- .inner {
+.inner {
   position: absolute;
   top: 150px;
   left: 300px;
-  width:1400px;
+  width: 1400px;
   height: 900px;
   background-color: #fff;
 }
@@ -50,11 +48,11 @@ tr:nth-child(2n) {
 
 .chat {
   position: absolute;
-  overflow:auto;
-  top:50px;
-  width:1400px;
+  overflow: auto;
+  top: 50px;
+  width: 1400px;
   height: 700px;
-  background-color:#fcd345;
+  background-color: #fcd345;
 }
 #a_btn {
   padding: 0;
@@ -64,17 +62,16 @@ tr:nth-child(2n) {
 .input_box {
   position: absolute;
   top: 750px;
-  width:1400px;
+  width: 1400px;
   height: 75px;
   text-align: center;
   padding-top: 25px;
   background-color: #fcd345;
-
 }
 textarea {
   position: absolute;
   left: -50px;
-  width:1200px;
+  width: 1200px;
 }
 .send {
   position: absolute;
@@ -86,14 +83,14 @@ textarea {
   margin-left: 1200px;
   width: 80px;
   padding: 8px;
-  background-color: #FC9645;
+  background-color: #fc9645;
   border-radius: 5px;
 }
 .message {
   width: 400px;
   background-color: #fff;
   border: 1px solid #fcd345;
-  border-radius:10px;
+  border-radius: 10px;
   padding: 10px;
 }
 .div_name {

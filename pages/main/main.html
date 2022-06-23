@@ -18,12 +18,18 @@
   <body>
     <div class="header_wrap">
       <div class="div_class">
-        <a href="../main/main.html" width="300px"
-          ><img src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo.png?alt=media&token=e1f06479-7657-4496-9f02-eb482619cb4b" alt="" class="logo" width="200px"
+        <a href="../main/main.html"
+          ><img
+            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
+            alt=""
+            class="logo"
+            width="300px"
+            height="300px"
         /></a>
         <nav class="menu_nav">
-          <h2 class="hidden"></h2>
+          <!-- <h2 class="hidden"></h2> -->
           <ul class="gnb">
+            <li><p class="li" onclick="document.location.href='../find_food/find_food.html'">음식점 검색</p></li>
             <li><p class="li" onclick="document.location.href='../recommend/recommend.html'">추천 목록</p></li>
             <li><p class="li" onclick="document.location.href='../make_chat/make_chat.html'">채팅방 만들기</p></li>
             <li><p class="li" onclick="document.location.href='../chat_list/chat_list.html'">채팅방 접속하기</p></li>
@@ -35,141 +41,11 @@
     </div>
     <div>
       <div>
-        <div class="inner_box">
-          <div id="map"></div>
-        </div>
-        <div class="input_list">
-          <input type="text" id="query_field" placeholder="찾고 싶은 위치를 입력하세요!" />&nbsp;
-          <button onclick="newKEYWORD();">검색하기</button>
-          <br />
-          <ul id="food_list">
-            <li></li>
-          </ul>
+        <div class="desc_wrapper">
+          <img class="desc_img" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/main_phone2.png?alt=media&token=abe72b94-366d-429c-92d2-955d8d8901ab" alt="" />
+          <p class="desc_text">인공지능을 기반으로 맛 추천이 가능한 배달메이트 매칭을 하는 웹사이트입니다.</p>
         </div>
       </div>
     </div>
-
-    <script>
-      var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-      var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        mapOption = {
-          center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-          level: 10, // 지도의 확대 레벨
-        };
-
-      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-      // 현재 위치
-      // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
-      if (navigator.geolocation) {
-        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-        navigator.geolocation.getCurrentPosition(function (position) {
-          var lat = position.coords.latitude, // 위도
-            lon = position.coords.longitude; // 경도
-
-          var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-            message = '<div style="padding:5px;">현재 위치!</div>'; // 인포윈도우에 표시될 내용입니다
-
-          // 마커와 인포윈도우를 표시합니다
-          displayMarker(locPosition, message);
-
-          // 현재 위치 주변 값 얻어오기
-          getAddr(lat, lon);
-          function getAddr(lat, lon) {
-            let geocoder = new kakao.maps.services.Geocoder();
-            let coord = new kakao.maps.LatLng(lat, lon);
-            let callback = function (result, status) {
-              if (status === kakao.maps.services.Status.OK) {
-                console.log(result);
-                newKEYWORD(result[0]['address']['address_name']);
-              }
-            };
-
-            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
-          }
-        });
-      } else {
-        // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-
-        var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
-          message = 'geolocation을 사용할수 없어요..';
-
-        displayMarker(locPosition, message);
-      }
-
-      // 지도에 마커와 인포윈도우를 표시하는 함수입니다
-      function displayMarker(locPosition, message) {
-        // 마커를 생성합니다
-        var marker = new kakao.maps.Marker({
-          map: map,
-          position: locPosition,
-        });
-
-        var iwContent = message, // 인포윈도우에 표시할 내용
-          iwRemoveable = true;
-
-        // 인포윈도우를 생성합니다
-        var infowindow = new kakao.maps.InfoWindow({
-          content: iwContent,
-          removable: iwRemoveable,
-        });
-
-        // 인포윈도우를 마커위에 표시합니다
-        infowindow.open(map, marker);
-        map.setLevel(4);
-        // 지도 중심좌표를 접속위치로 변경합니다
-        map.setCenter(locPosition);
-        // 지도 확대 레벨 변경
-      }
-
-      // 장소 검색
-      // 장소 검색 객체를 생성합니다
-      function newKEYWORD(inputKeyword) {
-        var keyword = document.getElementById('query_field').value + ' 맛집';
-        var ps = new kakao.maps.services.Places();
-        //키워드 값으로 호출이 안된경우
-        if (inputKeyword == undefined) {
-          // 키워드로 장소를 검색합니다
-          ps.keywordSearch(String(keyword), placesSearchCB);
-        } else {
-          console.log(inputKeyword);
-          ps.keywordSearch(String(inputKeyword + ' 맛집'), placesSearchCB);
-        }
-      }
-
-      // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-      function placesSearchCB(data, status, pagination) {
-        if (status === kakao.maps.services.Status.OK) {
-          // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-          // LatLngBounds 객체에 좌표를 추가합니다
-          var bounds = new kakao.maps.LatLngBounds();
-          var elem = '';
-          for (var i = 0; i < data.length; i++) {
-            displayMarker_finding(data[i]);
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-
-            elem = elem + '<li><p onclick="location.href=\'' + data[i]['place_url'] + '\'"">' + data[i]['place_name'] + ' / ' + data[i]['address_name'] + '</li>';
-            console.log(data[i]);
-          }
-          document.getElementById('food_list').innerHTML = elem;
-
-          // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-          map.setBounds(bounds);
-        }
-      }
-      function displayMarker_finding(place) {
-        // 마커를 생성하고 지도에 표시합니다
-        var marker = new kakao.maps.Marker({
-          map: map,
-          position: new kakao.maps.LatLng(place.y, place.x),
-        });
-
-        // 마커에 클릭이벤트를 등록합니다
-        kakao.maps.event.addListener(marker, 'click', function () {
-          // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-          infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-          infowindow.open(map, marker);
-        });
-      }
-    </script>
   </body>
 </html>

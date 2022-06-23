@@ -1,39 +1,67 @@
+body {
+  background-color: #008b56;
+}
 .gnb {
-  width: 1000px;
+  width: 100%;
+  margin-left: 100px;
 }
 .gnb > li {
   float: left;
   list-style-type: none;
-  padding: 30px;
+  padding: 20px;
   color: white;
 }
 .header_wrap {
   display: flex;
   height: 150px;
-  width: 1300px;
-  margin: 0 auto;
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 0px;
 }
 .div_class {
+  margin-left: 50px;
   margin-top: 50px;
-  width: 1800px;
+  width: 80%;
+  float: left;
 }
 .logo {
   position: relative;
   margin-top: -30px;
   width: 100px;
   height: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .menu_nav {
   position: relative;
-  margin-top: -110px;
-  text-align: right;
-  float: right;
+  margin-top: -170px;
+  text-align: left;
+  float: left;
   vertical-align: middle;
-  width: 1300;
+  width: 100%;
+  margin-left: 15%;
+  /* margin-right: 200px; */
   line-height: 100px;
 }
 .li {
+  font-family: 'S-CoreDream-2ExtraLight';
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
+}
+* {
+  font-family: 'S-CoreDream-5Medium';
+}
+@font-face {
+  font-family: 'S-CoreDream-2ExtraLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
