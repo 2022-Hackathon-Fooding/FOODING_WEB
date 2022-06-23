@@ -10,7 +10,9 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
     <title>FOODING</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9bfd0f66280f312cd564008236c11783"></script>
     <link rel="stylesheet" href="./main.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="header_wrap">
@@ -25,13 +27,15 @@
         <nav class="menu_nav">
           <h2 class="hidden"></h2>
           <ul class="gnb">
-            <li><a class="li" href="../recommend/">맛 추천</a></li>
+            <li><a class="li" href="../recommend/recommend.html">맛 추천</a></li>
             <li><a class="li" href="../chat_list/chat_list.html">메이트 찾기</a></li>
             <li><a class="li" href="../make_chat/make_chat.html">방만들기</a></li>
           </ul>
         </nav>
       </div>
     </div>
-    <div class="inner_box"></div>
+    <div class="inner_box">
+      <div id="map" style="width: 500px; height: 400px"></div>
+    </div>
   </body>
 </html>
