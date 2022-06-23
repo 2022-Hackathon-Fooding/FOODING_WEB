@@ -1,7 +1,12 @@
 body {
-  background-color: #008b56;
+  background-color: #fcd345;
 }
-
+.gnb > li {
+  float: left;
+  list-style-type: none;
+  padding: 20px;
+  color: #094d3e;
+}
 .container {
   width: 1300px;
   height: 100px;
@@ -36,47 +41,42 @@ a:hover {
   height: 800px;
 }
 .input_list {
-  margin-left: 100px;
-  margin-top: 100px;
+  margin: 50px;
+  margin-top: 0px;
   float: left;
   width: 30%;
 }
-/* .gnb {
-  width: 1000px;
+#food_list {
+  background-color: white;
+  list-style: none;
+  padding: 30px 50px;
+  margin-left: -10px;
+  margin-right: -10px;
+  height: 650px;
 }
-.gnb > li {
-  float: left;
-  list-style-type: none;
-  padding: 30px;
-  color: white;
+.food_wraper {
+  margin: 20px;
+  margin-top: 5px;
 }
-.header_wrap {
-  display: flex;
-  height: 150px;
-  width: 1300px;
-  margin: 0 auto;
-}
-.div_class {
-  margin-top: 50px;
-  width: 1800px;
-}
-.logo {
-  position: relative;
-  margin-top: -30px;
-  width: 100px;
-  height: 100px;
-}
-.menu_nav {
-  position: relative;
-  margin-top: -110px;
-  text-align: right;
-  float: right;
-  vertical-align: middle;
-  width: 1300;
-  line-height: 100px;
-}
-.li {
-  font-size: 20px;
-  font-weight: 700;
+.food_wraper > li {
   cursor: pointer;
-} */
+}
+
+.search_wrapper {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  background-color: #094d3e;
+  vertical-align: middle;
+  align-items: center;
+}
+#query_field::placeholder {
+  font-size: 30px;
+}
+#query_field {
+  font-size: 30px;
+  width: 90%;
+}
+#query_btn {
+  margin-left: 10px;
+}

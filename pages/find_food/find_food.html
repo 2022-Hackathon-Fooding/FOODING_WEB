@@ -11,8 +11,8 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
     <title>FOODING</title>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9bfd0f66280f312cd564008236c11783&libraries=services"></script>
-    <link rel="stylesheet" href="find_food.css" />
     <link rel="stylesheet" href="../HEAD/header.css" />
+    <link rel="stylesheet" href="find_food.css" />
     <script src="find_food.js" defer></script>
   </head>
   <body>
@@ -20,7 +20,7 @@
       <div class="div_class">
         <a href="../main/main.html"
           ><img
-            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
+            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_dark.png?alt=media&token=6b8b0d07-468b-4367-9c8d-8ef5e14da700"
             alt=""
             class="logo"
             width="300px"
@@ -34,7 +34,6 @@
             <li><p class="li" onclick="document.location.href='../make_chat/make_chat.html'">채팅방 만들기</p></li>
             <li><p class="li" onclick="document.location.href='../chat_list/chat_list.html'">채팅방 접속하기</p></li>
             <li><p class="li" onclick="document.location.href='../project_intro/project_intro.html'">프로젝트 소개</p></li>
-            <li><p class="li" onclick="document.location.href='../team_intro/team_intro.html'">팀원 소개</p></li>
           </ul>
         </nav>
       </div>
@@ -45,12 +44,21 @@
           <div id="map"></div>
         </div>
         <div class="input_list">
-          <input type="text" id="query_field" placeholder="찾고 싶은 위치를 입력하세요!" />&nbsp;
-          <button onclick="newKEYWORD();">검색하기</button>
-          <br />
-          <ul id="food_list">
-            <li></li>
-          </ul>
+          <div class="search_wrapper">
+            <input type="text" id="query_field" placeholder="찾고 싶은 위치를 입력하세요!" />&nbsp;
+            <img
+              id="query_btn"
+              src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/search_icon.png?alt=media&token=a1162410-1593-49ea-8a77-c97752466cb9"
+              onclick="newKEYWORD();"
+              style="cursor: pointer"
+              alt=""
+            />
+          </div>
+          <div class="food_wraper">
+            <ul id="food_list">
+              <li></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
