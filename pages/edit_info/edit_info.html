@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOODING</title>
+    <!-- css -->
+    <link rel="stylesheet" href="edit_info.css" />
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+
+    <script defer src="edit_info.js"></script>
+  </head>
+  <body>
+    <div id="BODY">
+      <div class="IMG_BOX">
+        <div class="img_inner_box" onclick="location.href=('../login/login.html')" style="cursor: pointer">
+          <img class="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30" alt="main_icon" />
+        </div>
+      </div>
+
+      <div class="inner">
+        <div class="inner_box" id="change_div" style="display: none">
+          <div>
+            <div class="input">
+              <div>
+                <img src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/default_profile.png?alt=media&token=8bbcac87-894e-4114-940b-45d361086f5c" alt="default_logo" />
+              </div>
+              <label class="disc">이름</label><br />
+              <input type="text" class="text_input" placeholder="이름을 입력하세요" id="name" disabled /><br />
+              <br />
+              <label class="disc">닉네임</label><br />
+              <input type="text" class="text_input" placeholder="닉네임을 입력하세요" id="nickname" /><br />
+              <br />
+              <label class="disc">전화번호</label><br />
+              <input type="text" class="text_input" placeholder="전화번호를 입력하세요" id="phone" /><br />
+              <br />
+              <label class="disc">이메일</label><br />
+              <input type="text" class="text_input" placeholder="이메일을 입력하세요" id="email" disabled /><br />
+              <br />
+              <label class="disc">비밀번호</label><br />
+              <button class="text_input" onclick="location.href=('../find_pw/find_pw.html')">비밀번호 초기화</button><br />
+            </div>
+            <br />
+            <br />
+            <!-- <button onClick="location.href='./signup'">sign up</button> -->
+            <button class="but" onclick="upload()">수정하기</button>
+            <br />
+          </div>
+        </div>
+        <div class="inner_box" id="login_div">
+          <div>
+            <div class="input">
+              <label class="disc" style="font-size: 30px">사용자 확인</label><br /><br />
+              <label class="disc">이메일</label><br />
+              <input type="text" class="text_input" placeholder="이메일을 입력하세요" id="email_login" /><br />
+              <br />
+              <label class="disc">비밀번호</label><br />
+              <input type="password" class="text_input" placeholder="비밀번호를 입력하세요" id="password_login" />
+              <br />
+            </div>
+            <br />
+            <br />
+            <button class="but" onclick="login()">확인하기</button>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
