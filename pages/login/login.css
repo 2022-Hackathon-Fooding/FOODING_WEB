@@ -41,6 +41,8 @@ body {
   width: 400px;
   font-size: 15px;
   padding: 5px;
+  border: 0;
+  outline: 0;
 }
 
 @font-face {

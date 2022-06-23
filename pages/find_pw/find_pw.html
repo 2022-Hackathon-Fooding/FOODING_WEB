@@ -12,24 +12,44 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-    <!-- sha256 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
     <script defer src="find_pw.js"></script>
   </head>
   <body>
-    <div>
-      <div>
-        <div id="content">
-          <p>비밀번호 찾기</p>
-          <label for="name">이름</label><br />
-          <input type="text" id="name" name="name" /><br />
-          <label for="email">이메일</label><br />
-          <input type="text" id="email" name="email" /><br /><br />
-          <button onclick="findUserPassword()">비밀번호 찾기!</button>
+    <div id="BODY">
+      <div class="IMG_BOX">
+        <div class="img_inner_box">
+          <img
+            class="img_file"
+            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
+            alt="main_icon"
+            onclick="location.href='../login/login.html'"
+            style="cursor: pointer"
+          />
         </div>
       </div>
-      <div id="content1">
-        <div></div>
+      <div class="inner">
+        <div class="inner_box">
+          <div id="login_div" class="main-div">
+            <div>
+              <div>
+                <div class="select_box"><p onclick="location.href='../find_id/find_id.html'" style="cursor: pointer">아이디 찾기</p></div>
+                <div class="select_box" id="SELECTED"><p>비밀번호 찾기</p></div>
+              </div>
+              <div class="discription_box">
+                <p>비밀번호를 잃어버리셨나요?<br />하단의 정보를 상세히 입력하세요.</p>
+              </div>
+              <div class="find_radio_box">
+                <label> <input type="radio" checked="checked" /> 이메일로 비밀번호 초기화 하기 </label>
+              </div>
+              <br />
+              <input class="text_input" type="text" id="name" name="name" placeholder="이름을 입력하세요" /><br />
+              <br />
+              <input class="text_input" type="text" id="email" name="email" placeholder="이메일를 입력하세요" /><br />
+              <br />
+              <button class="but" onclick="findUserPassword();">다음</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

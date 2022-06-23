@@ -12,20 +12,43 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-    <!-- sha256 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
     <script defer src="find_id.js"></script>
   </head>
   <body>
-    <div>
-      <div>
-        <div>
-          <p>아이디 찾기</p>
-          <label for="name">이름</label><br />
-          <input type="text" id="name" name="name" /><br />
-          <label for="phone">휴대전화 번호</label><br />
-          <input type="text" id="phone" name="phone" /><br /><br />
-          <button onclick="findUserId()">아이디 찾기!</button>
+    <div id="BODY">
+      <div class="IMG_BOX">
+        <div class="img_inner_box">
+          <img
+            class="img_file"
+            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
+            alt="main_icon"
+            onclick="location.href='../login/login.html'"
+            style="cursor: pointer"
+          />
+        </div>
+      </div>
+      <div class="inner">
+        <div class="inner_box">
+          <div id="login_div" class="main-div">
+            <div>
+              <div>
+                <div class="select_box" id="SELECTED"><p>아이디 찾기</p></div>
+                <div class="select_box"><p onclick="location.href='../find_pw/find_pw.html'" style="cursor: pointer">비밀번호 찾기</p></div>
+              </div>
+              <div class="discription_box">
+                <p>아이디를 잃어버리셨나요?<br />하단의 정보를 상세히 입력하세요.</p>
+              </div>
+              <div class="find_radio_box">
+                <label> <input type="radio" checked="checked" /> 이메일로 찾기 </label>
+              </div>
+              <br />
+              <input class="text_input" type="text" id="name" name="name" placeholder="이름을 입력하세요" /><br />
+              <br />
+              <input class="text_input" type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요" /><br />
+              <br />
+              <button class="but" onclick="findUserId();">다음</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

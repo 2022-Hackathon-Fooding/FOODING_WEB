@@ -1,0 +1,92 @@
+body {
+  background-color: #008b56;
+}
+.img_inner_box {
+  padding-top: 100px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 150px;
+}
+.inner {
+  display: flex;
+  justify-content: center;
+}
+.inner_box {
+  margin-top: 50px;
+  padding: 30px 50px;
+  border-radius: 25px;
+  background-color: #fdf8cc;
+}
+.img_file {
+  display: flex;
+}
+#BODY {
+  background-color: #008b56;
+}
+.but {
+  background-color: #fcd345;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  color: #767676;
+  margin-top: 3px;
+  cursor: pointer;
+}
+.text_input {
+  width: 350px;
+  font-size: 14px;
+  font-family: 'S-CoreDream-4Regular';
+  padding: 10px;
+  margin-top: 5px;
+  border: 0;
+  outline: 0;
+}
+.text_input::placeholder {
+  color: #767676;
+}
+.label_input {
+  color: #094d3e;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-4Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff%27') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'S-CoreDream-5Medium';
+}
+.select_box {
+  position: relative;
+  width: 50%;
+  float: left;
+  text-align: center;
+  background-color: white;
+}
+#SELECTED {
+  border-bottom: 2px solid #094d3e;
+}
+.discription_box {
+  padding-top: 60px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.find_radio_box {
+  text-align: center;
+  padding: 15px;
+  background-color: #fcd345;
+}

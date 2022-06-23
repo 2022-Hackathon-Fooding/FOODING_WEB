@@ -10,37 +10,13 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-//로그아웃
-function logout() {
-  firebase.auth().signOut();
-  // location.href = "../login/login.html"
-}
-logout();
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // User is signed in.
-    document.getElementById('user_div').style.display = 'block';
-    document.getElementById('login_div').style.display = 'none';
-
-    var user = firebase.auth().currentUser;
-
-    if (user != null) {
-      location.href = './main';
-      var email_id = user.email;
-      document.getElementById('user_para').innerHTML = 'Welcome User : ' + email_id;
-    }
-  } else {
-    // No user is signed in.
-    document.getElementById('user_div').style.display = 'none';
-    document.getElementById('login_div').style.display = 'block';
-  }
-});
 
 //회원가입
 function newuser() {
   email = document.getElementById('new_email').value;
   new_pw_1 = document.getElementById('new_pw_1').value;
   new_pw_2 = document.getElementById('new_pw_2').value;
+  nickname = document.getElementById('nickname').value;
   name = document.getElementById('name').value;
   phone = document.getElementById('phone').value;
   if (new_pw_1 != new_pw_2) {
@@ -52,6 +28,7 @@ function newuser() {
       .then((userCredential) => {
         const currentUser = {
           id: userCredential.user.uid,
+          nickname: nickname,
           email: email,
           name: name,
           phone: phone,
@@ -62,6 +39,7 @@ function newuser() {
           .doc(currentUser.id)
           .set({
             id: currentUser.id,
+            nickname: currentUser.nickname,
             name: currentUser.name,
             email: currentUser.email,
             phone: currentUser.phone,

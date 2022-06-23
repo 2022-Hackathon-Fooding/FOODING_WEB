@@ -12,31 +12,44 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-    <!-- sha256 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+
     <script defer src="register.js"></script>
-    <!-- <link href="이미지주소.ico" rel="shortcut icon" type="image/x-icon"> -->
   </head>
   <body>
-    <div>
-      <div>
-        <div>
-          <img src="../../src/logo" alt="">
-          <p>FOODING</p>
+    <div id="BODY">
+      <div class="IMG_BOX">
+        <div class="img_inner_box" onclick="location.href=('../login/login.html')" style="cursor: pointer">
+          <img class="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30" alt="main_icon" />
         </div>
-        <div>
-          <!-- 휴대폰번호 이름 -->
-          <label for="new_email">이메일</label><br>
-          <input type="text" id="new_email" name="new_email"/> <br>
-          <label for="new_pw_1">비밀번호</label><br>
-          <input type="password" id="new_pw_1" name="new_pw_1"><br>
-          <label for="new_pw_2">비밀번호 확인</label><br>
-          <input type="password" id="new_pw_2" name="new_pw_2"><br>
-          <label for="name">이름</label><br>
-          <input type="text" id="name" name="name"><br>
-          <label for="phone">휴대전화 번호</label><br>
-          <input type="text" id="phone" name="phone"></label><br>
-          <button onclick="newuser();">SUBMIT!</button>
+      </div>
+      <div class="inner">
+        <div class="inner_box">
+          <div id="login_div" class="main-div">
+            <div class="input">
+              <label class="disc">이름</label><br />
+              <input type="email" class="text_input" placeholder="이름을 입력하세요" id="email_field" /><br />
+              <br />
+              <label class="disc">닉네임</label><br />
+              <input type="email" class="text_input" placeholder="닉네임을 입력하세요" id="email_field" /><br />
+              <br />
+              <label class="disc">전화번호</label><br />
+              <input type="email" class="text_input" placeholder="전화번호를 입력하세요" id="email_field" /><br />
+              <br />
+              <label class="disc">이메일</label><br />
+              <input type="email" class="text_input" placeholder="이메일을 입력하세요" id="email_field" /><br />
+              <br />
+              <label class="disc">비밀번호</label><br />
+              <input type="password" class="text_input" placeholder="비밀번호를 입력하세요" id="new_pw_1" /><br />
+              <br />
+              <label class="disc">비밀번호 확인</label><br />
+              <input type="password" class="text_input" placeholder="비밀번호를 입력하세요" id="new_pw_2" />
+            </div>
+            <br />
+            <br />
+            <!-- <button onClick="location.href='./signup'">sign up</button> -->
+            <button class="but" onclick="newuser()">회원가입</button>
+            <br />
+          </div>
         </div>
       </div>
     </div>
