@@ -14,7 +14,7 @@ body {
   position: relative;
   margin-top: -110px;
   text-align: right;
-  margin-left: 800px;
+  margin-left: 600px;
 }
 .li {
   font-weight: 700;
@@ -70,4 +70,5 @@ a:hover {
   float: left;
   list-style-type: none;
   padding: 30px;
+  color: white;
 }
