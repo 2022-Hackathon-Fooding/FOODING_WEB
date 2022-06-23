@@ -44,7 +44,7 @@ function result() {
                                               array_change1(radio[3]),array_change1(radio[4]))
   //tensor로 변환
   tensor_array=tf.tensor(result_array)
-  const Model_path = "./tensorflowjs/model.json";
+  const Model_path = "./tensorflowjs2/model.json";
   //모델 만들기
   const model = tf.loadLayersModel(Model_path);
   //배열 형태 변경

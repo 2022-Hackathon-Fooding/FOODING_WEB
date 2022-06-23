@@ -10,9 +10,17 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+// 채팅방 만들기 - radio 메뉴 value 가져오기
+var menu;
+function getMenu(event) {
+    menu = event.target.value;
+    // document.getElementById("result").innerHTML = menu;
+}
 var cnt =0;
 var ul=[];
 function show_list() {
+  console.log("click")
   const db = firebase.database();
   const listchat = db.ref("chattings/");
   var chats=[];
@@ -22,7 +30,7 @@ function show_list() {
       const list = {
         chatName : lists.chattingName,
         chatPlace : lists.chattingPlace,
-        user : lists.user,
+        nickname : lists.nickname,
         menu : lists.Menu
       }
       chats.push(list);
@@ -30,6 +38,10 @@ function show_list() {
       const list_chatPlace = lists.chattingPlace;
       const list_user = lists.user;
       const list_menu = lists.Menu;
+  
+      console.log(cnt++);
+      console.log(list);
+  
       const table = document.getElementById("list_table");
       const newRow = table.insertRow();
   
@@ -37,7 +49,8 @@ function show_list() {
       var newCell_menu = newRow.insertCell(1)
       var newCell_user = newRow.insertCell(2);
       var newCell_chatPlace = newRow.insertCell(3);
-      var a = `<button onclick="chatting(value);" value="${list_chatName}">${list_chatName}</button>`;
+      var a = `<button onclick="chatting(value);" id="a_btn" value="${list_chatName}">${list_chatName}</button>
+      `;
       newCell_chatName.innerHTML = a;
       newCell_menu.innerText = list_menu;
       newCell_user.innerText = list_user;
@@ -46,19 +59,33 @@ function show_list() {
   })
 }
 show_list();
+function make_chat() {
+  const chat_name = document.getElementById("room_name").value;
+  const chat_place = document.getElementById("room_place").value;
+  const name = document.getElementById("name").value.toString();
+  const db = firebase.database();
+  db.ref("chattings/"+chat_name).set({
+    chattingName:chat_name,
+    chattingPlace:chat_place,
+    user:name,
+    Menu:menu
+  });
+  alert("방이 만들었습니다.");
+}
 
 function chatting(value) {
   console.log(value)
-
+  document.getElementById("find_chat").style.display="none";
+  document.getElementById("find_chat_btn").style.display="none";
   document.getElementById("list_table").style.display="none";
   var html = `<div class="chat">
   <ul id="ul_name" class="chat_ul">
   </ul>
   </div>
   <div class="input_box">
-  <div class="send"></div> 
-  <input type="text" id="input">
-  <button onclick="send(value);" id="btn" value="${value}">전송</button>
+  <div class="send">
+  <textarea id="input"></textarea>
+  <button onclick="send(value);" id="btn" value="${value}">전송</button></div> 
   </div>
   `;
   document.getElementById("chat").innerHTML=html;
@@ -78,39 +105,51 @@ function show_chat(value) {
   const db = firebase.database();
   const listchat = db.ref("chatting/"+value+"/");
   listchat.on("child_added",function (snapshot) {
-    if(cnt==true) {
-      pre = snapshot.val().date;
-      cnt = false;
-    }
-    var li = document.createElement("li");
-    var div = document.createElement("div");
-    var div_name = document.createElement("div");
-    var div_time = document.createElement("div");
-    var div_date = document.createElement("div");
 
-    div_name.className="div_name";
-    li.className="message";
-    div_time.className="div_time";
-    div_date.className="div_date";
-    if(snapshot.val().user_uid==firebase.auth().currentUser.uid) {
-      div.className="right";
-    } else {
-      div.className="left";
-    }
-    if(pre != snapshot.val().date) {
-      div_date.append(snapshot.val().date);
-      div.append(div_date);
-    }
+  var li = document.createElement("li");
+  var div = document.createElement("div");
+  var div_name = document.createElement("div");
+  var div_time = document.createElement("div");
+  var div_date = document.createElement("div");
+
+  if(cnt==true) {
+    pre = snapshot.val().date;
+    cnt = false;
+    div_date.append(snapshot.val().date);
+    div.append(div_date);
+  }
+
+  div_name.className="div_name";
+  li.className="message";
+  div_time.className="div_time";
+  div_date.className="div_date";
+
+  if(pre != snapshot.val().date) {
+    div_date.append(snapshot.val().date);
+    div.append(div_date); 
+  }
+
+  if(snapshot.val().user_uid==firebase.auth().currentUser.uid) {
+    div.className="right";
+    // li.className.add("li_right");
+  } else {
+    div.className="left";
+    // li.className.add("li_left");
+  }
+
 
     console.log(snapshot.val());
     console.log(firebase.auth().currentUser.user);
     div_name.append(snapshot.val().user);
     li.append(snapshot.val().message);
     div_time.append(snapshot.val().timeString);
+
     div.append(div_name);
     div.append(li);
     div.append(div_time);
     ul.append(div);
+  
+
 
     pre = snapshot.val().date;
 
@@ -140,12 +179,12 @@ function send(value) {
       const userId = db_fs.collection("users").doc(firebase.auth().currentUser.uid);
       console.log(firebase.auth().currentUser.uid)
       userId.get().then((snapshot_fs)=> {
-        user_name=snapshot_fs.data()["name"];
+        user_name=snapshot_fs.data()["nickname"];
         console.log(user_name);
         snapshot.forEach(function (child) {
           db.ref("chatting/"+value).push({
             message:document.getElementById("input").value,
-            user:user_name,
+            nickname:user_name,
             user_uid:firebase.auth().currentUser.uid,
             date:dateString,
             timeString:timeString
@@ -157,4 +196,8 @@ function send(value) {
   })
   let chat = document.querySelector('.chat');
   chat.scrollTop = chat.scrollHeight;
+}
+
+function create_chat() {
+  location.href = "../make_chat/make_chat.html"
 }

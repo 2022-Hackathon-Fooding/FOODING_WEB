@@ -1,36 +1,89 @@
-body {
-  background-color: #008B56;
+
+@font-face {
+  font-family: 'S-CoreDream-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+*{
+  font-family: 'S-CoreDream-5Medium';
+  font-weight: 600;
+  color: #396658;
+}
+#find_chat {
+  position: relative;
+  margin-left: 410px;
+  top: 40px;
+  z-index:9;
+}
+.table {
+  padding: 10px;
+}
+.table_head {
+  background-color: #FEF7CC;
+}
+th, td {
+  padding: 10px;
+}
+tr:nth-child(2n) {
+  background-color: hsl(54, 100%, 98%);
+}
+ .inner {
+  position: absolute;
+  top: 150px;
+  left: 300px;
+  width:1400px;
+  height: 900px;
+  background-color: #fff;
+}
+.table {
+  position: relative;
+  margin-top: 80px;
+  margin-left: 150px;
+}
+
+#find_chat_btn {
+  position: absolute;
+  margin-top: 700px;
+  margin-left: 1400px;
+}
+
 .chat {
   position: absolute;
   overflow:auto;
-  left: 450px;
-  width:1100px;
+  top:50px;
+  width:1400px;
   height: 700px;
   background-color:#fcd345;
-  border-radius: 10px 10px 0 0;
+}
+#a_btn {
+  padding: 0;
+  border: none;
+  background: none;
 }
 .input_box {
   position: absolute;
-  top: 850px;
-  left: 450px;
-  width:1100px;
+  top: 750px;
+  width:1400px;
   height: 75px;
   text-align: center;
   padding-top: 25px;
   background-color: #fcd345;
-  border-radius: 0 0 10px 10px;
+
+}
+textarea {
+  position: absolute;
+  left: -50px;
+  width:1200px;
 }
 .send {
-  position: fixed;
-  bottom: 130px;
-  left: 460px;
-}
-#input {
-  width: 880px;
+  position: absolute;
+  top: 50px;
+  left: 100px;
 }
 #btn {
   position: relative;
+  margin-left: 1200px;
   width: 80px;
   padding: 8px;
   background-color: #FC9645;
@@ -54,8 +107,23 @@ body {
 .left {
   margin-top: 10px;
   margin-left: 10px;
+  list-style: none;
 }
 .right {
   position: relative;
-  margin-left: 59%;
+  margin-left: 65%;
+  list-style: none;
 }
+
+.div_date {
+  text-align: center;
+}
+
+/* .li_left {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/chat3.png?alt=media&token=51e05cd7-d908-43cd-9830-423479a2f79b");
+  background-repeat:no-repeat ;
+}
+.li_right {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/chat1.png?alt=media&token=69cac408-fda5-44d2-958c-5e9ff2df3e64");
+  background-repeat:no-repeat ;
+} */

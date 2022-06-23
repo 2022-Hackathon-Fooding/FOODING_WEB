@@ -20,12 +20,12 @@ function make_chat() {
   const chat_place = document.getElementById("room_place").value;
   const db = firebase.database();
   const db_fs = firebase.firestore();
-  const userId = db_fs.collection("users").doc("firebase.auth().currentUser.uid");
+  const userId = db_fs.collection("users").doc(firebase.auth().currentUser.uid);
   userId.get().then((snapshot_fs)=> {
     db.ref("chattings/"+chat_name).push({
       chattingName:chat_name,
       chattingPlace:chat_place,
-      user:"snapshot_fs.data()[/name/]",
+      nickname:snapshot_fs.data()["nickname"],
       Menu:menu
     });
   });
