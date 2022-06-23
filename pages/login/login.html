@@ -12,53 +12,43 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-    <!-- sha256 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+
     <script defer src="login.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9bfd0f66280f312cd564008236c11783"></script>
   </head>
-  <style>
-    .logo {
-      position: absolute;
-      left: 900px;
-      top: 150px;
-      z-index: 999;
-    }
-  </style>
   <body>
-    <div id="header">
-      <div class="header_wrap my-8">
-        <h1>
-          <div class="my-8"></div>
-          <a href="./"
-            ><p class="logo"><img src="img/logo2.png" width="180px" alt="" /></p
-          ></a>
-        </h1>
-        <nav class="float-right">
-          <h2 class="hidden"></h2>
-          <ul class="gnb"></ul>
-        </nav>
+    <div id="BODY">
+      <div class="IMG_BOX">
+        <div class="img_inner_box">
+          <img class="img_file" src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30" alt="main_icon" />
+        </div>
       </div>
       <div class="inner">
         <div class="inner_box">
           <div id="login_div" class="main-div">
             <br />
             <div class="id flex items-baseline">
-              <div class="id_context text-3xl font-bold">아이디 : &nbsp; &nbsp; &nbsp; &nbsp;</div>
-              <input type="email" class="textr-2xl" placeholder="Email..." id="email_field" />
+              <input type="email" class="text_input" placeholder="이메일을 입력하세요" id="email_field" />
+              <br /><br />
             </div>
             <div class="password flex items-baseline">
-              <div class="password_context text-3xl font-bold">비밀번호 : &nbsp;&nbsp;&nbsp;</div>
-              <input type="password" class="textr-2xl" placeholder="Password..." id="password_field" />
+              <input type="password" class="text_input" placeholder="비밀번호를 입력하세요" id="password_field" />
             </div>
             <br />
-            <button onclick="login()">Login</button>
+            <label>
+              <a class="linker" id="reg" href="../register/register.html" style="text-decoration: none">회원 가입</a>
+              <div style="float: right">
+                <a class="linker" href="../find_id/find_id.html" style="text-decoration: none">아이디 </a>
+                <span>&nbsp;/&nbsp;</span>
+                <a class="linker" href="../find_pw/find_pw.html" style="text-decoration: none">비밀번호 찾기</a>
+              </div>
+            </label>
             <br />
-            <a href="../find_id/find_id.html">아이디 찾기</a><span>&nbsp;|&nbsp;</span> <a href="../find_pw/find_pw.html">비밀번호 찾기</a><span>&nbsp;|&nbsp;</span>
-            <a href="../register/register.html">회원 가입</a>
+            <br />
             <!-- <button onClick="location.href='./signup'">sign up</button> -->
+            <button class="but" onclick="login()">Login</button>
+            <br />
           </div>
-          <div id="user_div" class="loggedin-div">
+          <div id="user_div" class="loggedin-div" style="display: none">
             <h3>Welcome User</h3>
             <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
             <button onClick="location.href='../main/main.html'">Go to Homepage</button>
