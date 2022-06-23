@@ -1,0 +1,155 @@
+body {
+  background-color: #FDF8CC;
+}
+.gnb {
+  width: 100%;
+  margin-left: 100px;
+}
+.gnb > li {
+  float: left;
+  list-style-type: none;
+  padding: 20px;
+  color: #008B56;
+}
+.header_wrap {
+  display: flex;
+  height: 150px;
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 0px;
+}
+.div_class {
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 80%;
+  float: left;
+}
+.logo {
+  position: relative;
+  margin-top: -30px;
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.menu_nav {
+  position: relative;
+  margin-top: -170px;
+  text-align: left;
+  float: left;
+  vertical-align: middle;
+  width: 70%;
+  margin-left: 30%;
+  /* margin-right: 200px; */
+  line-height: 100px;
+}
+.li {
+  font-family: 'S-CoreDream-2ExtraLight';
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+* {
+  font-family: 'S-CoreDream-5Medium';
+}
+@font-face {
+  font-family: 'S-CoreDream-2ExtraLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* recommend */
+* {
+  font-family: 'S-CoreDream-5Medium';
+}
+
+.rec_food {
+  /* font-family: 'S-CoreDream-2ExtraLight'; */
+  font-size: 25px;
+  position: relative;
+  margin-top: 50px;
+  margin-left:800px;
+  padding: 0;
+border: none;
+background: none;
+}
+.box1 {
+
+  background-color: #fff;
+  width:400px;
+  height:450px;
+}
+.food1 {
+  position:relative;
+  top: 100px;
+  left:220px;
+}
+.in_box1 {
+  position:relative;
+  background-color: #008B56;
+  width:400px;
+  height:250px;
+}
+#food_img1, #food_img3 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 360px;
+  height: 210px;
+}
+#food_img2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width:320px;
+  height:310px;
+}
+.box2 {
+  position:relative;
+  top:-400px;
+  left:690px;
+  background-color:#fff;
+  width:400px;
+  height:600px;
+}
+.in_box3{
+  position:relative;
+  background-color: #fff;
+  width: 400px;
+  height: 50px;
+}
+.in_box2 {
+  position:relative;
+  top: 20px;
+  left: 20px;
+  background-color: #008B56;
+  text-align: center;
+  width:360px;
+  height:350px;
+}
+.food3 {
+ position: relative;
+ top: -950px;
+ left: 1150px;
+}
+
+.food_name {
+  position: relative;
+  text-align: center;
+}
+
+#food_name1, #food_name3 {
+  top: 320px;
+}
+
+#food_name2 {
+  top: 450px;
+}

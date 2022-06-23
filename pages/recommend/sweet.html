@@ -9,19 +9,20 @@
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <!-- tensorflowjs -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script>
   <title>FOODING</title>
-  <!-- <link rel="stylesheet" href="../main/main.css"> -->
-  <link rel="stylesheet" href="./chat_list.css">
-  <link rel="stylesheet" href="../HEAD/header.css" />
-
-  <script src="./chat_list.js"></script>
+  <link rel="stylesheet" href="../main/main.css">
+  <link rel="stylesheet" href="./taste.css">
+  <!-- <link rel="stylesheet" href="../HEAD/header.css" /> -->
+  <script src="./taste.js"></script>
 </head>
 <body>
   <div class="header_wrap">
     <div class="div_class">
       <a href="../main/main.html" width="300px"
         ><img
-          src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
+          src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_green.png?alt=media&token=3689a59a-b891-474f-83ae-9ad460b07337"
           alt=""
           class="logo"
           width="300px"
@@ -35,30 +36,32 @@
           <li><p class="li" onclick="document.location.href='../make_chat/make_chat.html'">채팅방 만들기</p></li>
           <li><p class="li" onclick="document.location.href='../chat_list/chat_list.html'">채팅방 접속하기</p></li>
           <li><p class="li" onclick="document.location.href='../project_intro/project_intro.html'">프로젝트 소개</p></li>
-          <li><p class="li" onclick="document.location.href='../team_intro/team_intro.html'">팀원 소개</p></li>
         </ul>
       </nav>
     </div>
   </div>
   <div class="inner_box">
-    <!-- <ul id="list">sad</ul> -->
-    <div id="find_chat">방 찾기</div>
-    <div class="inner">
-      <div id="chat">
-        <div id="chat_list"></div>
+    <button class="rec_food" onclick="random_show_sweet();" style="color:bisque">달콤한 맛 추천</button>
+    <div class="box">
+      <div class="box1 food1">
+        <div class="in_box1"><img src=""  id="food_img1" alt="맛 추천 버튼을 눌려주세요.">
+          <div id="food_name1" class="food_name"></div>
+        </div>
+      </div>
+      <div class="box2 food2">
+          <div class="in_box2">
+            <img id="food_img2" src="" alt="맛 추천 버튼을 눌려주세요.">
+            <div id="food_name2" class="food_name"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box1 food3">
+        <div class="in_box1">
+          <img id="food_img3" src="" alt="맛 추천 버튼을 눌려주세요.">
+          <div id="food_name3" class="food_name"></div>
+        </div>
+      </div>
     </div>
-    <table id="list_table" class="table">
-        <thead>
-            <tr class="table_head">
-                <td width="500px">방 이름</td>
-                <td width="150px">메뉴</td>
-                <td width="150px">닉네임</td>
-                <td width="200px">장소</td>
-            </tr>
-        </thead>
-    </table>
-    </div>
-    <button id="find_chat_btn" onclick="create_chat();">방 만들기</button>
-</div>
+  </div>
 </body>
 </html>

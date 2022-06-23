@@ -1,0 +1,106 @@
+
+body{
+  background-color: #FCD345; 
+}
+.gnb {
+  width: 100%;
+  margin-left: 100px;
+}
+.gnb > li {
+  float: left;
+  list-style-type: none;
+  padding: 20px;
+  color: white;
+}
+.header_wrap {
+  display: flex;
+  height: 150px;
+  width: 80%;
+  margin-left: 10%;
+  padding-bottom: 0px;
+}
+.div_class {
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 80%;
+}
+.logo {
+  position: relative;
+  margin-top: -30px;
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.menu_nav {
+  position: relative;
+  margin-top: -170px;
+  text-align: left;
+  float: left;
+  vertical-align: middle;
+  width: 100%;
+  margin-left: 20%;
+  /* margin-right: 200px; */
+  line-height: 100px;
+}
+.li {
+  font-family: 'S-CoreDream-2ExtraLight';
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+* {
+  font-family: 'S-CoreDream-5Medium';
+}
+@font-face {
+  font-family: 'S-CoreDream-2ExtraLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff%27') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'S-CoreDream-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff%27') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* recommend */
+* {
+  font-family: 'S-CoreDream-5Medium';
+}
+.rec {
+  position: absolute;
+  top: 200px;
+  left: 800px;
+  font-size: 25px;
+}
+.total_inner {
+  position: absolute;
+  top: 300px;
+  left: 475px; 
+}
+.main_name {
+  background-color: #008B56;
+  width: 750px;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+.input_area {
+  font-size: 25px;
+  background-color: #fff;
+  width: 750px;
+  height: 50px;
+  text-align: center;
+}
+
+.btn {
+  font-size: 25px;
+  background-color: #FCF4AC;
+  border: 1px solid #FCF4AC;
+  border-radius: 5px;
+  padding: 10px;
+  width: 750px;
+}

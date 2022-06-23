@@ -55,7 +55,7 @@ function result() {
     prediction.array().then(array => {
       var max = array[0][0];
       var cnt = 0;
-      var taste=['매콤한 맛','달콤한 맛','짭짤한 맛'];
+      var taste=['달콤한 맛','매콤한 맛','짭짤한 맛'];
       for(var i=1;i<3;i++) {
         if(max<array[0][i]) {
         max=array[0][i];
@@ -72,12 +72,12 @@ function result() {
 
 function move_web(value) {
   if(value == 1) {
-    location.href="./spicy.html";
-  } else if(value ==2) {
     location.href="./sweet.html";
+  } else if(value ==2) {
+    location.href="./spicy.html";
   } else if(value ==3) {
     location.href="./savory.html";
   } else {
-    alert("ㅇㅇㅇㅇ");
+
   }
 }
