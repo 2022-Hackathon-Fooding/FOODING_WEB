@@ -18,7 +18,7 @@
     <div class="header_wrap">
       <div class="div_class">
         <a href="../main/main.html" width="300px"
-          ><img src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo.png?alt=media&token=09a9c360-02e6-414e-adce-b16d8e80d45e" alt="" class="logo" width="200px"
+          ><img src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo.png?alt=media&token=e1f06479-7657-4496-9f02-eb482619cb4b" alt="" class="logo" width="200px"
         /></a>
         <nav class="menu_nav">
           <h2 class="hidden"></h2>
@@ -46,6 +46,7 @@
         </div>
       </div>
     </div>
+
     <script>
       var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -68,6 +69,21 @@
 
           // 마커와 인포윈도우를 표시합니다
           displayMarker(locPosition, message);
+
+          // 현재 위치 주변 값 얻어오기
+          getAddr(lat, lon);
+          function getAddr(lat, lon) {
+            let geocoder = new kakao.maps.services.Geocoder();
+            let coord = new kakao.maps.LatLng(lat, lon);
+            let callback = function (result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                console.log(result);
+                newKEYWORD(result[0]['address']['address_name']);
+              }
+            };
+
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+          }
         });
       } else {
         // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
@@ -105,11 +121,17 @@
 
       // 장소 검색
       // 장소 검색 객체를 생성합니다
-      function newKEYWORD() {
+      function newKEYWORD(inputKeyword) {
         var keyword = document.getElementById('query_field').value + ' 맛집';
         var ps = new kakao.maps.services.Places();
-        // 키워드로 장소를 검색합니다
-        ps.keywordSearch(String(keyword), placesSearchCB);
+        //키워드 값으로 호출이 안된경우
+        if (inputKeyword == undefined) {
+          // 키워드로 장소를 검색합니다
+          ps.keywordSearch(String(keyword), placesSearchCB);
+        } else {
+          console.log(inputKeyword);
+          ps.keywordSearch(String(inputKeyword + ' 맛집'), placesSearchCB);
+        }
       }
 
       // 키워드 검색 완료 시 호출되는 콜백함수 입니다
