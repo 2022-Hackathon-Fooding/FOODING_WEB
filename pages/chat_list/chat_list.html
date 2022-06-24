@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- firebase -->
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-  <title>FOODING</title>
-  <!-- <link rel="stylesheet" href="../main/main.css"> -->
-  <link rel="stylesheet" href="./chat_list.css">
-  <link rel="stylesheet" href="../HEAD/header.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <title>FOODING</title>
+    <!-- <link rel="stylesheet" href="../main/main.css"> -->
+    <link rel="stylesheet" href="./chat_list.css" />
+    <link rel="stylesheet" href="../HEAD/header.css" />
 
-  <script src="./chat_list.js"></script>
-</head>
-<body>
-  <div class="header_wrap">
-    <div class="div_class">
-      <a href="../main/main.html" width="300px"
-        ><img
-          src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
-          alt=""
-          class="logo"
-          width="300px"
-          height="300px"
-      /></a>
-      <nav class="menu_nav">
-        <h2 class="hidden"></h2>
-        <ul class="gnb">
-          <li><p class="li" onclick="document.location.href='../find_food/find_food.html'">음식점 검색</p></li>
-          <li><p class="li" onclick="document.location.href='../recommend/recommend.html'">추천 목록</p></li>
-          <li><p class="li" onclick="document.location.href='../make_chat/make_chat.html'">채팅방 만들기</p></li>
-          <li><p class="li" onclick="document.location.href='../chat_list/chat_list.html'">채팅방 접속하기</p></li>
-          <li><p class="li" onclick="document.location.href='../project_intro/project_intro.html'">프로젝트 소개</p></li>
-          <li><p class="li" onclick="document.location.href='../team_intro/team_intro.html'">팀원 소개</p></li>
-        </ul>
-      </nav>
+    <script src="./chat_list.js"></script>
+  </head>
+  <body>
+    <div class="header_wrap">
+      <div class="div_class">
+        <a href="../main/main.html" width="300px"
+          ><img
+            src="https://firebasestorage.googleapis.com/v0/b/hekaton-be17b.appspot.com/o/logo_login.png?alt=media&token=e3662920-e7a4-4006-8064-13684141dd30"
+            alt=""
+            class="logo"
+            width="300px"
+            height="300px"
+        /></a>
+        <nav class="menu_nav">
+          <h2 class="hidden"></h2>
+          <ul class="gnb">
+            <li><p class="li" onclick="document.location.href='../find_food/find_food.html'">음식점 검색</p></li>
+            <li><p class="li" onclick="document.location.href='../recommend/recommend.html'">추천 목록</p></li>
+            <li><p class="li" onclick="document.location.href='../make_chat/make_chat.html'">채팅방 만들기</p></li>
+            <li><p class="li" onclick="document.location.href='../chat_list/chat_list.html'">채팅방 접속하기</p></li>
+            <li><p class="li" onclick="document.location.href='../project_intro/project_intro.html'">프로젝트 소개</p></li>
+            <li><p class="li" onclick="document.location.href='../edit_info/edit_info.html'">정보 수정</p></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-  <div class="inner_box">
-    <!-- <ul id="list">sad</ul> -->
-    <div id="find_chat">방 찾기</div>
-    <div class="inner">
-      <div id="chat">
-        <div id="chat_list"></div>
-    </div>
-    <table id="list_table" class="table">
-        <thead>
+    <div class="inner_box">
+      <!-- <ul id="list">sad</ul> -->
+      <div id="find_chat">방 찾기</div>
+      <div class="inner">
+        <div id="chat">
+          <div id="chat_list"></div>
+        </div>
+        <table id="list_table" class="table">
+          <thead>
             <tr class="table_head">
-                <td width="500px">방 이름</td>
-                <td width="150px">메뉴</td>
-                <td width="150px">닉네임</td>
-                <td width="200px">장소</td>
+              <td width="500px">방 이름</td>
+              <td width="150px">메뉴</td>
+              <td width="150px">닉네임</td>
+              <td width="200px">장소</td>
             </tr>
-        </thead>
-    </table>
+          </thead>
+        </table>
+      </div>
+      <button id="find_chat_btn" onclick="create_chat();">방 만들기</button>
     </div>
-    <button id="find_chat_btn" onclick="create_chat();">방 만들기</button>
-</div>
-</body>
+  </body>
 </html>

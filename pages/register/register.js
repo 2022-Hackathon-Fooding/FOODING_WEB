@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 //회원가입
 function newuser() {
-  email = document.getElementById('new_email').value;
+  email = document.getElementById('email').value;
   new_pw_1 = document.getElementById('new_pw_1').value;
   new_pw_2 = document.getElementById('new_pw_2').value;
   nickname = document.getElementById('nickname').value;
