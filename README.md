@@ -93,6 +93,7 @@
 
 ## 영상 유튜브 링크
 
+### https://www.youtube.com/watch?v=2cHym-uvGBQ
 
 ---
 
